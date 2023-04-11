@@ -209,4 +209,6 @@
   .contenedorCerrar{
     width: 22px;
   }
+  .componenteError{
+font-size: 11px;  }
 }
