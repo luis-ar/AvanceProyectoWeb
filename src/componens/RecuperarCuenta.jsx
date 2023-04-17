@@ -1,11 +1,6 @@
 import React from "react";
-import styled from "styled-components";
-import Error from "./Error";
-// npm i -D tailwindcss postcss autoprefixer: instalar tailwind
 
-// npm install --save styled-components
-
-const Login = ({
+const RecuperarCuenta = ({
   setCorreo,
   correo,
   contraseña,
@@ -14,7 +9,6 @@ const Login = ({
   mensaje,
   setRegistro,
   setRecuperar,
-  setNosotros,
 }) => {
   const mostrarContraseña = () => {
     const inputContra = document.querySelector(".inputPassword");
@@ -46,6 +40,18 @@ const Login = ({
     <>
       <div className="madre">
         <form className="contenedor" onSubmit={handleVerificar}>
+          <div
+            className="contenedorCerrar"
+            onClick={(e) => {
+              e.preventDefault();
+              setRegistro(false);
+              setRecuperar(true);
+            }}
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+              <path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM175 175c9.4-9.4 24.6-9.4 33.9 0l47 47 47-47c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-47 47 47 47c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-47-47-47 47c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l47-47-47-47c-9.4-9.4-9.4-24.6 0-33.9z" />
+            </svg>
+          </div>
           <div className="diseños">
             <svg
               viewBox="0 0 86.02 86.02"
@@ -58,9 +64,21 @@ const Login = ({
               </g>
             </svg>
           </div>
-          <h2 className="bienvenidoH2">Bienvenido de nuevo</h2>
+          <h2 className="bienvenidoH2">Recuperar Cuenta</h2>
           {mensaje?.length > 0 &&
             mensaje.map((error, i) => <Error key={i}>{error}</Error>)}
+          <h5 className="correoH5">Nombre</h5>
+          <div className="password_div">
+            <div className="fas fa-solid fa-user iconos"></div>
+            <input
+              type="text"
+              className="datos inputCorreo"
+              placeholder="Ingrese su nombre completo"
+              onChange={(e) => {
+                setCorreo(e.target.value);
+              }}
+            />
+          </div>
 
           <h5 className="correoH5">Dirección de correo electrónico</h5>
           <div className="password_div">
@@ -75,7 +93,7 @@ const Login = ({
             />
           </div>
 
-          <h5 className="correoH5 claveH5">Clave</h5>
+          <h5 className="correoH5 claveH5">Nueva Clave</h5>
 
           <div className="password_div">
             <div className="fas fa-eye " onClick={mostrarContraseña}></div>
@@ -90,74 +108,17 @@ const Login = ({
               }}
             />
           </div>
-          <a
-            onClick={(e) => {
-              e.preventDefault();
-              setRegistro(true);
-              setRecuperar(false);
-            }}
-            className="NuevaCuenta olvidasteH5 contraseña"
-          >
-            ¿Olvidaste tu contraseña?
-          </a>
 
-          <input type="submit" className="datos datosBTN" value="Continuar" />
-          <div className="ultimaParte">
-            <span className="rayaSpan">
-              <font className="rayita">
-                <font className="rayita">O</font>
-              </font>
-            </span>
-          </div>
-
-          <div className="caja1">
-            <div className="datos continuar continuarGoogle">
-              <img
-                className="iconoLogo"
-                height="28px"
-                alt="google logo"
-                src="https://i.ibb.co/L0dFmQk/Group-1.png"
-              />
-              continuar con google
-            </div>
-            <div className="datos continuar continuarGit">
-              <img
-                className="iconoLogo"
-                height="28px"
-                alt="github logo"
-                src="https://i.ibb.co/rFtk1gQ/Group-2.png"
-              />
-              continuar con github
-            </div>
-          </div>
-          <h3 className="registroEnlace">
-            ¿No tienes cuenta?{" "}
-            <a
-              onClick={(e) => {
-                e.preventDefault();
-                setRegistro(true);
-              }}
-              className="NuevaCuenta"
-            >
-              Registrate aqui
-            </a>
-          </h3>
+          <input
+            type="submit"
+            className="datos datosBTN"
+            value="Registrarse"
+            style={{ marginTop: "20px" }}
+          />
         </form>
-        <div className="contenedorNosotros">
-          <i
-            className="fas fa-sharp fa-solid fa-users nosotros"
-            onClick={(e) => {
-              setNosotros(true);
-              setRegistro(true);
-
-            }}
-          >
-            <span className="nombreNosotros">Nosotros</span>
-          </i>
-        </div>
       </div>
     </>
   );
 };
 
-export default Login;
+export default RecuperarCuenta;

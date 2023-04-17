@@ -5,6 +5,7 @@
   justify-content: center;
   align-items: center;
   background-color: rgb(232, 240, 236);
+  position: relative;
 }
 .contenedor {
   background-color: rgb(235, 239, 241);
@@ -124,6 +125,7 @@
 }
 .continuar {
   margin-top: 3%;
+  margin-bottom: 5px;
 }
 .imagenes {
   margin-right: 10px;
@@ -181,7 +183,25 @@
   border-radius: 10px;
 }
 
+.nosotros {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 5%;
+  right: 3%;
+  font-size: 30px;
+}
+.nombreNosotros {
+  font-size: 15px;
+}
+
+
 @media (max-width: 500px) {
+  .datosBTN {
+    font-size: 15px;
+  }
   .datos {
     font-size: 15px;
   }
@@ -201,14 +221,22 @@
     font-size: 20px;
     font-weight: 700;
   }
+  .correoH5 {
+    font-size: 15px;
+  }
   .continuar {
     font-size: 13px;
     text-align: center;
     padding-right: 10px;
   }
-  .contenedorCerrar{
+  .contenedorCerrar {
     width: 22px;
   }
-  .componenteError{
-font-size: 11px;  }
+  .componenteError {
+    font-size: 11px;
+  }
+  .registroEnlace{
+    font-size: 15px;
+    text-align: center;
+  }
 }
