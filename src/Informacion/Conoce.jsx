@@ -13,6 +13,48 @@ import Imagen5 from "../Imagenes/cinco.jpg";
 import Imagen6 from "../Imagenes/seis.jpg";
 
 const Conoce = ({ setRegistro, setNosotros }) => {
+  const Mostrar = () => {
+    const hamburguer = document.querySelector(".hamburger");
+    const menu = document.querySelector(".menu-navegacion");
+    hamburguer.addEventListener("click", () => {
+      menu.classList.toggle("spread");
+    });
+    window.addEventListener("click", (e) => {
+      if (
+        menu.classList.contains("spread") &&
+        e.target != menu &&
+        e.target != hamburguer
+      ) {
+        menu.classList.toggle("spread");
+      }
+    });
+  };
+
+  const ImagenAmplia = () => {
+    const hamburguer1 = document.querySelector(".hamburger");
+    const imagenes = document.querySelectorAll(".img-galeria");
+    const imagenesLight = document.querySelector(".agregar-imagen");
+    const contenedorLight = document.querySelector(".imagen-light");
+    imagenes.forEach((imagen) => {
+      imagen.addEventListener("click", () => {
+        aparecerImagen(imagen.getAttribute("src"));
+      });
+    });
+
+    contenedorLight.addEventListener("click", (e) => {
+      if (e.target !== imagenesLight) {
+        contenedorLight.classList.toggle("show");
+        imagenesLight.classList.toggle("showImage");
+        hamburguer1.style.opacity = "1";
+      }
+    });
+    const aparecerImagen = (imagen) => {
+      imagenesLight.src = imagen;
+      contenedorLight.classList.toggle("show");
+      imagenesLight.classList.toggle("showImage");
+      hamburguer1.style.opacity = "0";
+    };
+  };
   return (
     <div>
       <header className="header" id="inicio">
@@ -26,7 +68,12 @@ const Conoce = ({ setRegistro, setNosotros }) => {
           }}
         />
 
-        <img src={ImagenHamburguesa} alt="" className="hamburger" />
+        <img
+          src={ImagenHamburguesa}
+          alt=""
+          className="hamburger"
+          onClick={Mostrar}
+        />
         <nav className="menu-navegacion">
           <a href="#inicio">Inicio</a>
           <a href="#servicio">Servicio</a>
@@ -40,7 +87,6 @@ const Conoce = ({ setRegistro, setNosotros }) => {
             Lorem ipsum dolor sit, amet consectetur adipisicing.
           </p>
         </div>
-
       </header>
       <main>
         <section className="services contenedor1" id="servicio">
@@ -85,16 +131,46 @@ const Conoce = ({ setRegistro, setNosotros }) => {
           <div className="contenedor1">
             <h2 className="subtitulo">Galeria</h2>
             <div className="contenedor-galeria">
-              <img src={Imagen1} alt="" className="img-galeria" />
-              <img src={Imagen2} alt="" className="img-galeria" />
-              <img src={Imagen3} alt="" className="img-galeria" />
-              <img src={Imagen4} alt="" className="img-galeria" />
-              <img src={Imagen5} alt="" className="img-galeria" />
-              <img src={Imagen6} alt="" className="img-galeria" />
+              <img
+                src={Imagen1}
+                onClick={ImagenAmplia}
+                alt=""
+                className="img-galeria"
+              />
+              <img
+                src={Imagen2}
+                onClick={ImagenAmplia}
+                alt=""
+                className="img-galeria"
+              />
+              <img
+                src={Imagen3}
+                onClick={ImagenAmplia}
+                alt=""
+                className="img-galeria"
+              />
+              <img
+                src={Imagen4}
+                onClick={ImagenAmplia}
+                alt=""
+                className="img-galeria"
+              />
+              <img
+                src={Imagen5}
+                onClick={ImagenAmplia}
+                alt=""
+                className="img-galeria"
+              />
+              <img
+                src={Imagen6}
+                onClick={ImagenAmplia}
+                alt=""
+                className="img-galeria"
+              />
             </div>
           </div>
         </section>
-        <section className="imagen-light">
+        <section className="imagen-light" onClick={ImagenAmplia}>
           <img src={ImagenClose} alt="" className="close" />
           <img src={Imagen1} alt="" className="agregar-imagen" />
         </section>
@@ -129,13 +205,16 @@ const Conoce = ({ setRegistro, setNosotros }) => {
             <a href="./" className="social-media-icon">
               <i className="bx bxl-twitter"></i>
             </a>
-            <a href="./" className="social-media-icon">
+            <a
+              target="_blank"
+              href="https://instagram.com/expen.semanager?igshid=ZDdkNTZiNTM="
+              className="social-media-icon"
+            >
               <i className="bx bxl-instagram"></i>
             </a>
           </div>
         </div>
         <div className="line"></div>
-
       </footer>
     </div>
   );
