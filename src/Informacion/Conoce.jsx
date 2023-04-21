@@ -16,9 +16,7 @@ const Conoce = ({ setRegistro, setNosotros }) => {
   const Mostrar = () => {
     const hamburguer = document.querySelector(".hamburger");
     const menu = document.querySelector(".menu-navegacion");
-    hamburguer.addEventListener("click", () => {
-      menu.classList.toggle("spread");
-    });
+    menu.classList.toggle("spread");
     window.addEventListener("click", (e) => {
       if (
         menu.classList.contains("spread") &&
@@ -29,31 +27,27 @@ const Conoce = ({ setRegistro, setNosotros }) => {
       }
     });
   };
+  const ContenedorLight = (e) => {
+    const hamburguer1 = document.querySelector(".hamburger");
+    const imagenesLight = document.querySelector(".agregar-imagen");
+    const contenedorLight = document.querySelector(".imagen-light");
+    if (e.target !== imagenesLight) {
+      contenedorLight.classList.toggle("show");
+      imagenesLight.classList.toggle("showImage");
+      hamburguer1.style.opacity = "1";
+    }
+  };
 
   const ImagenAmplia = () => {
     const hamburguer1 = document.querySelector(".hamburger");
-    const imagenes = document.querySelectorAll(".img-galeria");
+    const imagenes = document.querySelector(".img-galeria");
     const imagenesLight = document.querySelector(".agregar-imagen");
     const contenedorLight = document.querySelector(".imagen-light");
-    imagenes.forEach((imagen) => {
-      imagen.addEventListener("click", () => {
-        aparecerImagen(imagen.getAttribute("src"));
-      });
-    });
 
-    contenedorLight.addEventListener("click", (e) => {
-      if (e.target !== imagenesLight) {
-        contenedorLight.classList.toggle("show");
-        imagenesLight.classList.toggle("showImage");
-        hamburguer1.style.opacity = "1";
-      }
-    });
-    const aparecerImagen = (imagen) => {
-      imagenesLight.src = imagen;
-      contenedorLight.classList.toggle("show");
-      imagenesLight.classList.toggle("showImage");
-      hamburguer1.style.opacity = "0";
-    };
+    imagenesLight.src = imagenes.getAttribute("src");
+    contenedorLight.classList.toggle("show");
+    imagenesLight.classList.toggle("showImage");
+    hamburguer1.style.opacity = "0";
   };
   return (
     <div>
@@ -170,7 +164,7 @@ const Conoce = ({ setRegistro, setNosotros }) => {
             </div>
           </div>
         </section>
-        <section className="imagen-light" onClick={ImagenAmplia}>
+        <section className="imagen-light" onClick={ContenedorLight}>
           <img src={ImagenClose} alt="" className="close" />
           <img src={Imagen1} alt="" className="agregar-imagen" />
         </section>
@@ -199,10 +193,18 @@ const Conoce = ({ setRegistro, setNosotros }) => {
             <p>Somos expertos en la creación de tus sueños</p>
           </div>
           <div className="social-media">
-            <a href="./" className="social-media-icon">
+            <a
+              target="_blank"
+              href="https://www.facebook.com/profile.php?id=100091853778009"
+              className="social-media-icon"
+            >
               <i className="bx bxl-facebook"></i>
             </a>
-            <a href="./" className="social-media-icon">
+            <a
+              target="_blank"
+              href="https://twitter.com/Expense1Manager"
+              className="social-media-icon"
+            >
               <i className="bx bxl-twitter"></i>
             </a>
             <a
