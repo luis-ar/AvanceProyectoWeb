@@ -40,14 +40,12 @@ const Conoce = ({ setRegistro, setNosotros }) => {
     }
   };
 
-  const ImagenAmplia = () => {
+  const ImagenAmplia = (e) => {
     const hamburguer1 = document.querySelector(".hamburger");
-    const imagenes = document.querySelector(".img-galeria");
     const imagenesLight = document.querySelector(".agregar-imagen");
     const contenedorLight = document.querySelector(".imagen-light");
     const CloseExtra = document.querySelector(".cerrarVentana");
-
-    imagenesLight.src = imagenes.getAttribute("src");
+    imagenesLight.src = e.target.src;
     contenedorLight.classList.toggle("show");
     imagenesLight.classList.toggle("showImage");
     hamburguer1.style.opacity = "0";
