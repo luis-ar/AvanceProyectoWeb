@@ -31,10 +31,12 @@ const Conoce = ({ setRegistro, setNosotros }) => {
     const hamburguer1 = document.querySelector(".hamburger");
     const imagenesLight = document.querySelector(".agregar-imagen");
     const contenedorLight = document.querySelector(".imagen-light");
+    const CloseExtra = document.querySelector(".cerrarVentana");
     if (e.target !== imagenesLight) {
       contenedorLight.classList.toggle("show");
       imagenesLight.classList.toggle("showImage");
       hamburguer1.style.opacity = "1";
+      CloseExtra.style.opacity = "1";
     }
   };
 
@@ -43,11 +45,13 @@ const Conoce = ({ setRegistro, setNosotros }) => {
     const imagenes = document.querySelector(".img-galeria");
     const imagenesLight = document.querySelector(".agregar-imagen");
     const contenedorLight = document.querySelector(".imagen-light");
+    const CloseExtra = document.querySelector(".cerrarVentana");
 
     imagenesLight.src = imagenes.getAttribute("src");
     contenedorLight.classList.toggle("show");
     imagenesLight.classList.toggle("showImage");
     hamburguer1.style.opacity = "0";
+    CloseExtra.style.opacity = "0";
   };
   return (
     <div>

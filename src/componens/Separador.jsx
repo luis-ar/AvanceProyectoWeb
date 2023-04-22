@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Registro from "./Registro";
 import RecuperarCuenta from "./RecuperarCuenta";
 
+
 const Separador = ({
   setRecuperar,
   recuperar,
