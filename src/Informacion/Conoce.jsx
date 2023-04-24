@@ -11,6 +11,7 @@ import Imagen3 from "../Imagenes/tres.jpg";
 import Imagen4 from "../Imagenes/cuatro.jpg";
 import Imagen5 from "../Imagenes/cinco.jpg";
 import Imagen6 from "../Imagenes/seis.jpg";
+import Animacion from "../componens/Animacion";
 
 const Conoce = ({ setRegistro, setNosotros }) => {
   const Mostrar = () => {
@@ -82,8 +83,12 @@ const Conoce = ({ setRegistro, setNosotros }) => {
           <p className="copy">
             Lorem ipsum dolor sit, amet consectetur adipisicing.
           </p>
+          <Animacion />
+
         </div>
+
       </header>
+
       <main>
         <section className="services contenedor1" id="servicio">
           <h2 className="subtitulo">Nuestro Servicio</h2>
