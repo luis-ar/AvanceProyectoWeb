@@ -45,6 +45,7 @@ const Registro = ({
             onClick={(e) => {
               e.preventDefault();
               setRegistro(false);
+              setMensaje([]);
             }}
           >
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">

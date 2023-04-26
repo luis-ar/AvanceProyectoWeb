@@ -95,6 +95,7 @@ const Login = ({
               e.preventDefault();
               setRegistro(true);
               setRecuperar(false);
+              setMensaje([]);
             }}
             className="NuevaCuenta olvidasteH5 contraseña"
           >
@@ -136,6 +137,7 @@ const Login = ({
               onClick={(e) => {
                 e.preventDefault();
                 setRegistro(true);
+                setMensaje([]);
               }}
               className="NuevaCuenta"
             >
@@ -149,7 +151,6 @@ const Login = ({
             onClick={(e) => {
               setNosotros(true);
               setRegistro(true);
-
             }}
           >
             <span className="nombreNosotros">Nosotros</span>
