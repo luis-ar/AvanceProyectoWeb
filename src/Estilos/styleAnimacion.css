@@ -9,6 +9,7 @@ body {
   align-items: center;
   right: 50%;
   bottom: 1000px;
+  z-index: 1;
 }
 .item {
   position: absolute;
