@@ -136,7 +136,7 @@ const Login = ({
           </div>
 
           <div className="caja1">
-            {/* <div className="datos continuar continuarGoogle">
+            <div className="datos continuar continuarGoogle">
               <img
                 className="iconoLogo"
                 height="28px"
@@ -144,7 +144,7 @@ const Login = ({
                 src="https://i.ibb.co/L0dFmQk/Group-1.png"
               />
               continuar con google
-            </div> */}
+            </div>
             {/* <GoogleLogin
               className="datos1 continuar continuarGoogle"
               clientId={clienteId}
