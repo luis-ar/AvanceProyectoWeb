@@ -1,6 +1,10 @@
 import React from "react";
 import styled from "styled-components";
 import Error from "./Error";
+import { gapi } from "gapi-script";
+import GoogleLogin from "react-google-login";
+import { useEffect } from "react";
+
 // npm i -D tailwindcss postcss autoprefixer: instalar tailwind
 
 // npm install --save styled-components
@@ -16,6 +20,26 @@ const Login = ({
   setRecuperar,
   setNosotros,
 }) => {
+  const clienteId =
+    "565890216083-h7lapvn1hjrk6umehog5audrpqcuolbr.apps.googleusercontent.com";
+
+  useEffect(() => {
+    const start = () => {
+      gapi.auth2.init({
+        //clienteId,
+        client_id: clienteId,
+      });
+    };
+    gapi.load("client:auth2", start);
+  }, []);
+
+  const onSuccess = (respuesta) => {
+    console.log(respuesta);
+  };
+  const onFailure = () => {
+    console.log("respuesta");
+  };
+
   const mostrarContraseña = () => {
     const inputContra = document.querySelector(".inputPassword");
     inputContra.type = "text";
@@ -112,16 +136,16 @@ const Login = ({
           </div>
 
           <div className="caja1">
-            <div className="datos continuar continuarGoogle">
-              <img
-                className="iconoLogo"
-                height="28px"
-                alt="google logo"
-                src="https://i.ibb.co/L0dFmQk/Group-1.png"
-              />
-              continuar con google
-            </div>
-            <div className="datos continuar continuarGit">
+            <GoogleLogin
+              className="datos1 continuar continuarGoogle"
+              clientId={clienteId}
+              buttonText="continuar con google"
+              onSuccess={onSuccess}
+              onFailure={onFailure}
+              isSignedIn={true}
+              cookiePolicy={"single_host_policy"}
+            />
+            <div className="datos1 continuar continuarGit">
               <img
                 className="iconoLogo"
                 height="28px"
@@ -156,6 +180,8 @@ const Login = ({
             <span className="nombreNosotros">Nosotros</span>
           </i>
         </div>
+
+        {/* //////// */}
       </div>
     </>
   );

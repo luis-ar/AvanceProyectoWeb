@@ -7,6 +7,8 @@
   background-color: rgb(232, 240, 236);
   position: relative;
 }
+
+
 .contenedor {
   background-color: rgb(235, 239, 241);
   width: 600px;
@@ -28,6 +30,12 @@
   padding-left: 10px;
   border-radius: 10px;
 }
+.datos1 {
+  height: 50px !important;
+  font-size: 18px !important;
+  padding-left: 10px !important;
+  border-radius: 10px !important;
+}
 .diseños {
   text-align: center;
 }
@@ -36,17 +44,18 @@
   justify-content: end;
 }
 .continuar:hover {
-  background-color: rgb(214, 216, 214);
+  background-color: rgb(214, 216, 214) !important;
+  cursor: pointer !important;
 }
 .caja1 {
   display: flex;
   justify-content: space-between;
 }
 .continuar {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: 3px solid black;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  border: 3px solid black !important;
 }
 .bienvenidoH2 {
   text-transform: uppercase;
@@ -117,15 +126,23 @@
   vertical-align: inherit;
 }
 .continuarGoogle {
-  width: 50%;
-  margin-right: 15px;
+  width: 50% !important;
+  margin-right: 15px !important;
+  color: black !important;
+  background-color: transparent !important;
 }
+.continuarGoogle div {
+  background-color: transparent !important;
+
+  text-align: center !important;
+}
+
 .continuarGit {
   width: 50%;
 }
 .continuar {
-  margin-top: 3%;
-  margin-bottom: 5px;
+  margin-top: 3% !important;
+  margin-bottom: 5px !important;
 }
 .imagenes {
   margin-right: 10px;
@@ -197,7 +214,6 @@
   font-size: 15px;
 }
 
-
 @media (max-width: 500px) {
   .datosBTN {
     font-size: 15px;
@@ -235,7 +251,7 @@
   .componenteError {
     font-size: 11px;
   }
-  .registroEnlace{
+  .registroEnlace {
     font-size: 15px;
     text-align: center;
   }
