@@ -20,25 +20,25 @@ const Login = ({
   setRecuperar,
   setNosotros,
 }) => {
-  // const clienteId =
-  //   "565890216083-h7lapvn1hjrk6umehog5audrpqcuolbr.apps.googleusercontent.com";
+  const clienteId =
+    "565890216083-h7lapvn1hjrk6umehog5audrpqcuolbr.apps.googleusercontent.com";
 
-  // useEffect(() => {
-  //   const start = () => {
-  //     gapi.auth2.init({
-  //       //clienteId,
-  //       client_id: clienteId,
-  //     });
-  //   };
-  //   gapi.load("client:auth2", start);
-  // }, []);
+  useEffect(() => {
+    const start = () => {
+      gapi.auth2.init({
+        //clienteId,
+        client_id: clienteId,
+      });
+    };
+    gapi.load("client:auth2", start);
+  }, []);
 
-  // const onSuccess = (respuesta) => {
-  //   console.log(respuesta);
-  // };
-  // const onFailure = () => {
-  //   console.log("respuesta");
-  // };
+  const onSuccess = (respuesta) => {
+    console.log(respuesta);
+  };
+  const onFailure = () => {
+    console.log("respuesta");
+  };
 
   const mostrarContraseña = () => {
     const inputContra = document.querySelector(".inputPassword");
@@ -136,7 +136,7 @@ const Login = ({
           </div>
 
           <div className="caja1">
-            <div className="datos continuar continuarGoogle">
+            {/* <div className="datos continuar continuarGoogle">
               <img
                 className="iconoLogo"
                 height="28px"
@@ -144,8 +144,8 @@ const Login = ({
                 src="https://i.ibb.co/L0dFmQk/Group-1.png"
               />
               continuar con google
-            </div>
-            {/* <GoogleLogin
+            </div> */}
+            <GoogleLogin
               className="datos1 continuar continuarGoogle"
               clientId={clienteId}
               buttonText="continuar con google"
@@ -153,7 +153,7 @@ const Login = ({
               onFailure={onFailure}
               isSignedIn={true}
               cookiePolicy={"single_host_policy"}
-            /> */}
+            />
             <div className="datos1 continuar continuarGit">
               <img
                 className="iconoLogo"
