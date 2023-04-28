@@ -1,9 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 import Error from "./Error";
-// import { gapi } from "gapi-script";
-// import GoogleLogin from "react-google-login";
-// import { useEffect } from "react";
+import { gapi } from "gapi-script";
+import GoogleLogin from "react-google-login";
+import { useEffect } from "react";
 
 // npm i -D tailwindcss postcss autoprefixer: instalar tailwind
 
